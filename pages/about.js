@@ -1,5 +1,6 @@
 import Link from "../components/Link";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function about() {
   return (
@@ -26,7 +27,7 @@ export default function about() {
         <a href="https://neat.run/" target="_blank">
           Neat
         </a>{" "}
-        with my friends from college. In the past, I've done data related roles
+        with my friends from college. In the past, I've done data-related roles
         at{" "}
         <a href="https://www.ea.com/" target="_blank">
           Electronic Arts (EA)
@@ -42,12 +43,30 @@ export default function about() {
         .
       </div>
       <div className="mt-2">
+        These days I am brainstorming personal projects at the intersection of
+        hardware and software. In my spare time, you'll find me cloning projects
+        off Github and reverse-engineering them. Not the most efficient way to
+        learn but it works really well for me, especially in terms of speed.
+        Long term, I'd like to build the muscle memory that some prodigy devs
+        have. Feel free to ping me about anything you found interesting here.
+        Always happy to chat.
+      </div>
+      <div className="mt-2">
         If you'd like to contact me, check out the{" "}
         <Link key={"Contact"} href={"/contact"}>
-          Contact
+          contact
         </Link>{" "}
         page.
       </div>
+      <Image
+        alt="Mountains"
+        src="/Beijing.jpeg"
+        width="500"
+        height="375"
+        quality={100}
+        alt="Picture of author"
+        className="flex items-center"
+      />
     </div>
   );
 }
