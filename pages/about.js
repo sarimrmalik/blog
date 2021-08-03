@@ -1,8 +1,13 @@
 import Link from "../components/Link";
+import Head from "next/head";
 
 export default function about() {
   return (
     <div className="ml-5 mt-5 mx-auto max-w-2xl text-gray-500">
+      <Head>
+        <title>About | Sarim Malik</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="font-bold text-black">About</div>
       <div className="mt-3">Hi friends 👋🏽 </div>
       <div className="mt-2">
