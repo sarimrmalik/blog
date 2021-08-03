@@ -5,7 +5,6 @@ const navLinks = [
   { href: "/inspiration", title: "Inspiration" },
   { href: "/memes", title: "Memes" },
   { href: "/quotes", title: "Quotes" },
-  // { href: "/contact", title: "Contact" },
 ];
 
 export default navLinks;

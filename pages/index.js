@@ -26,14 +26,18 @@ export default function Home() {
             <Link
               key={link.title}
               href={link.href}
-              className="flex font-medium text-gray-400 hover:text-gray-600"
+              className="flex font-medium text-gray-400 hover:text-gray-600 no-underline"
             >
               {link.title}
             </Link>
           ))}
         </div>
-        <div className="ml-5 mt-10 flex font-medium text-gray-300 hover:text-gray-600">
-          <Link key={"Contact"} href={"/contact"}>
+        <div className="ml-5 mt-10 flex">
+          <Link
+            key={"Contact"}
+            href={"/contact"}
+            className="font-medium text-gray-400 hover:text-gray-600 no-underline"
+          >
             Contact
           </Link>
         </div>

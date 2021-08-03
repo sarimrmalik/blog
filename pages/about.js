@@ -1,7 +1,9 @@
+import Link from "../components/Link";
+
 export default function about() {
   return (
     <div className="ml-5 mt-5 mx-auto max-w-2xl text-gray-500">
-      <div className="text-xl font-bold">About</div>
+      <div className="font-bold text-black">About</div>
       <div className="mt-3">Hi friends 👋🏽 </div>
       <div className="mt-2">
         I'm Sarim and I use this space to collect stuff that I find interesting.
@@ -18,8 +20,7 @@ export default function about() {
         . Currently, I am building{" "}
         <a href="https://neat.run/" target="_blank">
           Neat
-        </a>
-        {""}
+        </a>{" "}
         with my friends from college. In the past, I've done data related roles
         at{" "}
         <a href="https://www.ea.com/" target="_blank">
@@ -36,7 +37,11 @@ export default function about() {
         .
       </div>
       <div className="mt-2">
-        If you'd like to contact me, check out the Contact page.
+        If you'd like to contact me, check out the{" "}
+        <Link key={"Contact"} href={"/contact"}>
+          Contact
+        </Link>{" "}
+        page.
       </div>
     </div>
   );
