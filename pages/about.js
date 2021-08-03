@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function about() {
   return (
-    <div className="ml-5 mt-5 mx-auto max-w-2xl text-gray-500">
+    <div className="ml-5 mr-5 mt-5 mx-auto max-w-2xl text-gray-500">
       <Head>
         <title>About | Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
