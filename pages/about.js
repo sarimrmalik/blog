@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function about() {
   return (
-    <div className="ml-5 mr-5 mt-5 mx-auto max-w-2xl text-gray-500">
+    <div className="ml-5 mr-5 mt-5 mx-auto max-w-2xl text-gray-500 font-body text-sm">
       <Head>
         <title>About | Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
@@ -68,11 +68,11 @@ export default function about() {
         alt="Picture of author"
         className="flex items-center"
       />
-      <div className="text-xs flex">
-        <div className="font-bold">Note</div>
-        <div className="ml-1">
-          Thanks to my friend, Zara Amer, for reviewing drafts of this page.
-        </div>
+      <div>
+        <span className="text-xs pb-5">
+          <b>Note </b> Thanks to my friend, Zara Amer, for reviewing drafts of
+          this page.
+        </span>
       </div>
     </div>
   );

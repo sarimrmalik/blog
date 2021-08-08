@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      mono: ["ui-monospace", "SFMono-Regular"],
+      body: ["Fira Code"],
     },
   },
   variants: {
