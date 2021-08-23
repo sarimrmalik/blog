@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import Head from "next/head";
+import * as Fullstory from "@fullstory/browser";
 
 import Link from "../components/Link";
 import navLinks from "../data/navLinks";
@@ -11,6 +13,10 @@ import contact from "./contact";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  // Setting up Fullstory
+  useEffect(() => {
+    Fullstory.init({ orgId: process.env.NEXT_PUBLIC_FULLSTORY_KEY });
+  });
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-black to-gray-800 font-body">
       <Head>
