@@ -22,12 +22,12 @@ export default function Home() {
         <div className="pl-5 pt-5 content-center items-center font-bold text-gray-200">
           Sarim Malik
         </div>
-        <div className="pl-5">
+        <div className="pl-5 flex flex-col">
           {navLinks.map((link) => (
             <Link
               key={link.title}
               href={link.href}
-              className="flex font-medium text-gray-400 hover:text-gray-600 no-underline"
+              className="font-medium text-gray-400 hover:text-gray-600 no-underline"
             >
               {link.title}
             </Link>
