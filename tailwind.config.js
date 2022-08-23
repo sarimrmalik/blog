@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      body: ["Fira Code"],
+      fira: ["Fira Code"],
+      redhat: ["'Red Hat Display', sans-serif"],
     },
   },
   variants: {
