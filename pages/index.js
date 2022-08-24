@@ -11,6 +11,11 @@ export default function Home() {
       <Head>
         <title>Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Hey! I'm Sarim. I'm a self-taught developer and mechanical engineer."
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <main className="font-redhat">
