@@ -7,15 +7,19 @@ import CursorBlob from "../components/CursorBlob";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8" />
         <meta
           name="description"
           content="Hey! I'm Sarim. I'm a self-taught developer and mechanical engineer."
         />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          property="og:image"
+          content="https://sarimmalik.com/preview.png"
+        />
       </Head>
 
       <main className="font-redhat">
