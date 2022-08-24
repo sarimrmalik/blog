@@ -16,7 +16,7 @@
     @apply flex p-2 items-center justify-center rounded-md hover:opacity-80;
   }
   .icon {
-    @apply w-5 h-5;
+    @apply w-5 h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7;
   }
 }
 

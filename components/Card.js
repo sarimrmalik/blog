@@ -9,9 +9,9 @@ const Card = ({ title, description, url }) => {
           <ArrowTopRightIcon className="icon" />
         </button>
         <div className="flex flex-col gap-y-2">
-          <div className="text-center">
-            <h2 className="text-2xl font-garamond">{title}</h2>
-            <p>{description}</p>
+          <div className="flex flex-col text-center xl:gap-y-4">
+            <h2 className="text-2xl xl:text-4xl font-garamond">{title}</h2>
+            <p className="xl:text-lg 2xl:text-xl">{description}</p>
           </div>
         </div>
       </div>

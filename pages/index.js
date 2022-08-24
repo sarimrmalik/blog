@@ -37,7 +37,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center">
-          <div className="text-gray-400 w-4/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5">
+          <div className="text-gray-400 w-4/5 lg:w-3/5 xl:w-3/5 2xl:w-2/5 xl:text-lg 2xl:text-xl">
             <div className="mt-2">
               Hey! I'm <b>Sarim</b>. I'm a self-taught developer & mechanical
               engineer. I grew up in Islamabad, did my undergrad in Montreal at{" "}
