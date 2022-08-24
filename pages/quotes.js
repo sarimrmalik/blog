@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function quotes() {
   return (
-    <div className="ml-5 mt-5 mr-5 mx-auto max-w-2xl text-gray-500 font-body text-sm">
+    <div className="ml-5 mt-5 mr-5 mx-auto max-w-2xl text-gray-500 font-redhat text-sm">
       <Head>
         <title>Quotes | Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
