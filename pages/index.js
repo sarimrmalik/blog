@@ -22,7 +22,7 @@ export default function Home() {
         />
       </Head>
 
-      <main className="font-redhat">
+      <main className="font-redhat max-w-screen overflow-x-clip">
         <CursorBlob />
         <div className="flex flex-col p-5 gap-y-5 items-center">
           <Image
