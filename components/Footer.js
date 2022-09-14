@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col 2xl:fixed 2xl:bottom-0 font-redhat w-full py-5 gap-y-5 text-gray-400 text-xs text-center align-baseline">
+    <footer className="flex flex-col sm:fixed bottom-0 bg-white dark:bg-black bg-opacity-90 font-ibm w-full py-3 2xl:py-5 text-center">
       <div className="flex justify-center gap-x-5">
         <button className="btn">
           <Link href="mailto:sarimrasheed@gmail.com">
@@ -32,6 +32,13 @@ export default function Footer() {
           </Link>
         </button>
       </div>
+      <p className="text-sm">
+        The design of this website is inspired by{" "}
+        <a className="text-sm" href="https://leerob.io/">
+          Lee Robinson's
+        </a>
+        .
+      </p>
     </footer>
   );
 }

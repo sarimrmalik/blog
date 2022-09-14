@@ -1,67 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply opacity-60 hover:opacity-80;
+  .font-primary {
+    @apply text-black dark:text-white;
+  }
+  .font-secondary {
+    @apply text-gray-600 dark:text-gray-300;
   }
 }
 
 @layer components {
   .btn {
-    @apply flex p-2 items-center justify-center rounded-md hover:opacity-80;
+    @apply flex p-2 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-800 items-center justify-center rounded-md;
+  }
+  .btn-primary {
+    @apply btn bg-gray-200 dark:bg-gray-600;
+  }
+  .btn-secondary {
+    @apply btn;
   }
   .icon {
-    @apply w-5 h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7;
+    @apply w-5 h-5 xl:w-6 xl:h-6;
   }
 }
 
-#cursor-blob {
-  width: 75vw;
-  height: 75vw;
-  background: linear-gradient(120deg, #a855f7, #f97316, #eab308);
-  opacity: 0.2;
-  filter: blur(100px);
-  pointer-events: none;
-  background-size: 1600% 1600%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(calc(-50%), -50%);
-  z-index: 0;
-  transition: 2s ease-out;
-  animation: blobRadius 5s ease infinite, blobBackground 15s ease infinite;
+a {
+  @apply text-blue-500 hover:text-blue-600 hover:underline text-lg;
 }
-
-@keyframes blobRadius {
-  0%,
-  100% {
-    border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%;
-  }
-  20% {
-    border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%;
-  }
-  40% {
-    border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%;
-  }
-  60% {
-    border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%;
-  }
-  80% {
-    border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%;
-  }
+p {
+  @apply text-lg font-secondary;
 }
-
-@keyframes blobBackground {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+h1 {
+  @apply font-bold text-4xl font-primary;
+}
+h2 {
+  @apply font-semibold text-3xl font-primary;
+}
+h3 {
+  @apply font-semibold text-lg text-gray-700;
 }

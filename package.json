@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@notionhq/client": "1.0.4",
     "@radix-ui/react-icons": "^1.1.1",
     "next": "10.x",
     "react": "17.x",
