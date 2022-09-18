@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 import projects from "../data/projects";
@@ -7,12 +8,14 @@ import Footer from "../components/Footer";
 import { getDatabase } from "../utils/notion";
 import { parsedDate } from "../utils/common";
 import { MoonIcon } from "@radix-ui/react-icons";
+import { useGlobalContext } from "../utils/context";
 
 export default function Home({ blogs }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, setDarkMode } = useGlobalContext();
+  const router = useRouter();
 
   return (
-    <div className={`${darkMode ? "dark" : ""}`}>
+    <div className={darkMode ? "dark" : ""}>
       <Head>
         <title>Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
@@ -96,9 +99,9 @@ export default function Home({ blogs }) {
                   <div key={i} className="flex w-full justify-between py-2">
                     <div className="flex gap-8">
                       <p className="opacity-60">{`0${i + 1}`}</p>
-                      <a className="" href={`/${blog.slug}`}>
+                      <button onClick={() => router.push(`/${blog.slug}`)}>
                         {blog.title}
-                      </a>
+                      </button>
                     </div>
 
                     <p className="invisible sm:visible">

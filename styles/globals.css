@@ -43,5 +43,5 @@ h2 {
   @apply font-semibold text-3xl font-primary;
 }
 h3 {
-  @apply font-semibold text-lg text-gray-700;
+  @apply font-thin font-primary text-lg text-gray-700;
 }

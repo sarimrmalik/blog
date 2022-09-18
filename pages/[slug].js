@@ -3,8 +3,11 @@ import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../utils/notion";
 import { Text, renderBlock, parsedDate } from "../utils/common";
 import Footer from "../components/Footer";
+import { useGlobalContext } from "../utils/context";
 
 export default function Post({ page, blocks }) {
+  const { darkMode } = useGlobalContext();
+
   if (!page || !blocks) {
     return <div />;
   }
@@ -16,7 +19,7 @@ export default function Post({ page, blocks }) {
   const formattedDate = parsedDate(date ?? "");
 
   return (
-    <div>
+    <div className={darkMode ? "dark" : ""}>
       <Head>
         <title>{`Blog — ${title[0].plain_text}`}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -28,23 +31,25 @@ export default function Post({ page, blocks }) {
         />
       </Head>
 
-      <div className="max-w-3xl min-h-screen px-4 mx-auto pt-16 sm:pt-32 font-ibm">
-        {/* Title and published date */}
-        <div className="space-y-4">
-          <h1>
-            <Text text={title} />
-          </h1>
-          <h3>{formattedDate}</h3>
+      <div className="min-h-screen dark:bg-black">
+        <div className="max-w-3xl px-4 mx-auto pt-16 sm:pt-32 font-ibm">
+          {/* Title and published date */}
+          <div className="space-y-4">
+            <h1>
+              <Text text={title} />
+            </h1>
+            <h3>{formattedDate}</h3>
 
-          {/* Sections */}
-          <section className="space-y-3">
-            {blocks.map((block) => (
-              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-            ))}
-          </section>
+            {/* Sections */}
+            <section className="space-y-3">
+              {blocks.map((block) => (
+                <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+              ))}
+            </section>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
