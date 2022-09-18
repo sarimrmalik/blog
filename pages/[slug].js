@@ -1,7 +1,8 @@
-import React, { useMemo, Fragment } from "react";
+import React, { Fragment } from "react";
 import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../utils/notion";
 import { Text, renderBlock, parsedDate } from "../utils/common";
+import Footer from "../components/Footer";
 
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {
@@ -16,13 +17,21 @@ export default function Post({ page, blocks }) {
 
   return (
     <div>
-      <Head
-        title={title[0].plain_text}
-        url={`https://sarimmalik.com/blog/${slug}`}
-      />
-      <button></button>
+      <Head>
+        <title>{`Blog — ${title[0].plain_text}`}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content={"Hey! I'm Sarim. This is my personal website."}
+        />
+        <meta
+          property="og:image"
+          content="https://sarimmalik.com/preview.png"
+        />
+      </Head>
 
-      <div className="max-w-3xl px-4 mx-auto pt-16 sm:pt-32 mb-32">
+      <div className="max-w-3xl min-h-screen px-4 mx-auto pt-16 sm:pt-32 font-ibm">
         {/* Title and published date */}
         <div className="space-y-4">
           <h1>
@@ -31,13 +40,14 @@ export default function Post({ page, blocks }) {
           <h3>{formattedDate}</h3>
 
           {/* Sections */}
-          <section className="text-gray-300">
+          <section className="space-y-3">
             {blocks.map((block) => (
               <Fragment key={block.id}>{renderBlock(block)}</Fragment>
             ))}
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
