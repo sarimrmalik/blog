@@ -100,7 +100,7 @@ export default function Home({ blogs }) {
                     <div className="flex gap-8">
                       <p className="opacity-60">{`0${i + 1}`}</p>
                       <button
-                        className="text-blue-500 hover:text-blue-600 hover:underline text-lg"
+                        className="text-blue-500 hover:text-blue-600 hover:underline text-lg text-left"
                         onClick={() => router.push(`/${blog.slug}`)}
                       >
                         {blog.title}
