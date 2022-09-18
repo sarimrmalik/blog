@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../utils/post.module.css";
+import React, { Fragment } from "react";
 
 // Parse dates from a variety of formats to a more readable format
 export const parsedDate = (date) => {
@@ -25,11 +26,11 @@ export const Text = ({ text }) => {
       <span
         key={i}
         className={[
-          bold ? styles.bold : "",
-          code ? styles.code : "",
-          italic ? styles.italic : "",
-          strikethrough ? styles.strikethrough : "",
-          underline ? styles.underline : "",
+          bold ? "font-bold" : "",
+          code ? "font-mono bg-gray-200 py-1 px-2 rounded-md text-red-700" : "",
+          italic ? "italic" : "",
+          strikethrough ? "line-through" : "",
+          underline ? "underline" : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
       >
@@ -51,39 +52,39 @@ export const renderBlock = (block) => {
   switch (type) {
     case "paragraph":
       return (
-        <p className="pb-8">
+        <p className="font-secondary">
           <Text text={value.rich_text} />
         </p>
       );
     case "heading_1":
       return (
-        <h1>
+        <div className="text-3xl font-bold font-primary mb-3">
           <Text text={value.rich_text} />
-        </h1>
+        </div>
       );
     case "heading_2":
       return (
-        <h2>
+        <div className="text-2xl font-semibold font-primary mb-2">
           <Text text={value.rich_text} />
-        </h2>
+        </div>
       );
     case "heading_3":
       return (
-        <div className="text-2xl font-medium py-4 text-gray-200">
+        <div className="text-xl font-semibold font-primary mb-1">
           <Text text={value.rich_text} />
         </div>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li className="pb-2">
+        <li className="font-secondary pl-4">
           <Text text={value.rich_text} />
         </li>
       );
     case "to_do":
       return (
-        <div>
-          <label htmlFor={id}>
+        <div className="pl-3">
+          <label htmlFor={id} className="font-secondary space-x-2.5">
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
             <Text text={value.rich_text} />
           </label>
@@ -92,16 +93,18 @@ export const renderBlock = (block) => {
     case "toggle":
       return (
         <details>
-          <summary>
+          <summary className="font-secondary font-semibold hover:bg-gray-100 py-1 pl-1.5 cursor-pointer">
             <Text text={value.rich_text} />
           </summary>
-          {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
+          <div className="pl-6">
+            {value.children?.map((block) => (
+              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            ))}
+          </div>
         </details>
       );
     case "child_page":
-      return <p>{value.title}</p>;
+      return <p className="text-red-600">404 Error</p>;
     case "image":
       const src =
         value.type === "external" ? value.external.url : value.file.url;
@@ -120,8 +123,8 @@ export const renderBlock = (block) => {
       return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
       return (
-        <pre className={styles.pre}>
-          <code className={styles.code_block} key={id}>
+        <pre className="bg-gray-100 p-2 rounded-lg">
+          <code className="flex p-2 font-mono text-gray-600" key={id}>
             {value.rich_text[0].plain_text}
           </code>
         </pre>
@@ -151,7 +154,7 @@ export const renderBlock = (block) => {
         </a>
       );
     default:
-      return `❌ Unsupported block (${
+      return `404 Error (${
         type === "unsupported" ? "unsupported by Notion API" : type
       })`;
   }
