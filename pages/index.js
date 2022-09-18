@@ -17,10 +17,7 @@ export default function Home({ blogs }) {
         <title>Sarim Malik</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="Hey! I'm Sarim. I'm a self-taught developer and mechanical engineer."
-        />
+        <meta name="description" content="Hey! I'm Sarim." />
         <meta
           property="og:image"
           content="https://sarimmalik.com/preview.png"

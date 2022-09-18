@@ -21,10 +21,7 @@ export default function Post({ page, blocks }) {
         <title>{`Blog — ${title[0].plain_text}`}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content={"Hey! I'm Sarim. This is my personal website."}
-        />
+        <meta name="description" content={"Hey! I'm Sarim."} />
         <meta
           property="og:image"
           content="https://sarimmalik.com/preview.png"
