@@ -93,7 +93,7 @@ export default function Home({ blogs }) {
                 ))}
               </div>
 
-              <h2>Notes</h2>
+              <h2>Linear Thinking</h2>
               <div className="flex flex-col space-y-2">
                 {blogs.map((blog, i) => (
                   <div key={i} className="flex w-full justify-between py-2">
